@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+  body {
+    @apply bg-lavender font-sans text-ink antialiased;
+  }
+  ::selection {
+    @apply bg-indigo-200 text-ink;
+  }
+}
+
+@layer components {
+  .card-title {
+    @apply text-[15px] font-bold text-ink;
+  }
+  .card-subtitle {
+    @apply text-xs text-ink-muted;
+  }
+  .field {
+    @apply w-full rounded-2xl border border-ink-line bg-lavender-soft px-4 py-2.5 text-sm text-ink
+      outline-none transition placeholder:text-ink-muted focus:border-indigo-400 focus:bg-white
+      focus:ring-4 focus:ring-indigo-100;
+  }
+  .field-label {
+    @apply mb-1.5 block text-xs font-semibold text-ink-soft;
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: #b5b7f5 transparent;
+  }
+}
+
+/* Recharts : pas de contour de focus sur les SVG */
+.recharts-wrapper svg:focus,
+.recharts-surface:focus {
+  outline: none;
+}
